@@ -56,6 +56,11 @@ define(["require", "exports"], function (require, exports) {
             // basic
             'print', 'error', 'warn', 'require', 'game', 'assert',
 
+            // Customs
+            'setfenv', 'getfenv', 'getgenv', 'setgenv',
+            'printidentity', 'getexecutorname',
+            'getexecutorversion', 'getcredits', 'getidentity',
+
             // raws
             'rawset', 'rawget', 'rawequal',
 

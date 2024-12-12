@@ -17,7 +17,7 @@
 			padding: 0;
 			overflow: hidden;
 			font-family: consolas, 'poppins', monospace;
-			color: white;
+			color: #8462F7;
 		}
 
 		.margin:first-child {
@@ -89,10 +89,10 @@
 			}
 
 			monaco.editor.defineTheme('Dark', {
-                base: 'vs-dark',
-                inherit: true,
-                rules: [
-				{ token: 'variable.language.self', foreground: 'c678dd' },
+				base: 'vs-dark',
+				inherit: true,
+				rules: [
+					{ token: 'variable.language.self', foreground: 'c678dd' },
 					{ token: 'variable.parameter.variadic', foreground: 'c678dd' },
 					{ token: 'variable.parameter.function', foreground: 'c678dd' },
 					{ token: 'variable.other.constant', foreground: 'c678dd' },
@@ -149,12 +149,12 @@
 					{ token: 'support.function', foreground: '61afef' },
 					{ token: 'support.function.library', foreground: '61afef' },
 					{ token: 'support.type', foreground: '61afef' },
-                ],
-                colors: {
-                    'editor.background': '#0c0c0c',
-                    'minimap.background': '#0c0c0c'
-                }
-            });
+				],
+				colors: {
+					'editor.background': '#0c0c0c',
+					'minimap.background': '#0c0c0c'
+				}
+			});
 
 			require(['vs/basic-languages/monaco.contribution'], function () {
 				monaco.languages.registerCompletionItemProvider('lua', {
@@ -198,46 +198,46 @@
 				editor.layout();
 			}
 
-			Cut = function() {
+			Cut = function () {
 				editor.focus();
 				document.execCommand('cut');
 			}
 
-			Copy = function() {
+			Copy = function () {
 				editor.focus();
 				document.execCommand('copy');
 			}
 
-			Paste = function() {
+			Paste = function () {
 				editor.focus();
 				document.execCommand('paste');
 			}
 
-			Undo = function() {
+			Undo = function () {
 				editor.focus();
 				document.execCommand('undo');
 			}
 
-			Redo = function() {
+			Redo = function () {
 				editor.focus();
 				document.execCommand('redo');
 			}
 
-			Delete = function() {
+			Delete = function () {
 				editor.focus();
 				document.execCommand('delete');
 			}
 
-			SelectAll = function() {
+			SelectAll = function () {
 				editor.focus();
 				document.execCommand('selectAll');
 			}
 
-			GetText = function() {
+			GetText = function () {
 				return editor.getValue();
 			}
 
-			SetText = function(x) {
+			SetText = function (x) {
 				editor.setValue(x);
 			}
 
@@ -376,82 +376,81 @@
 				editor.trigger('keyboard', 'type', { text: Text });
 			}
 
-		AddIntellisense = function(l, k, d, i) {
-                    console.log(l);
-                    console.log(k);
-                    console.log(d);
-                    console.log(i);
-                    var t;
-                    switch(k)
-                    {
-                        case "Class":
-                            t = monaco.languages.CompletionItemKind.Class;
-                            break;
-                        case "Color":
-                            t = monaco.languages.CompletionItemKind.Color;
-                            break;
-                        case "Constructor":
-                            t = monaco.languages.CompletionItemKind.Constructor;
-                            break;
-                        case "Enum":
-                            t = monaco.languages.CompletionItemKind.Enum;
-                            break;
-                        case "Field":
-                            t = monaco.languages.CompletionItemKind.Field;
-                            break;
-                        case "File":
-                            t = monaco.languages.CompletionItemKind.File;
-                            break;
-                        case "Folder":
-                            t = monaco.languages.CompletionItemKind.Folder;
-                            break;
-                        case "Function":
-                            t = monaco.languages.CompletionItemKind.Function;
-                            break;
-                        case "Interface":
-                            t = monaco.languages.CompletionItemKind.Interface;
-                            break;
-                        case "Keyword":
-                            t = monaco.languages.CompletionItemKind.Keyword;
-                            break;
-                        case "Method":
-                            t = monaco.languages.CompletionItemKind.Method;
-                            break;
-                        case "Module":
-                            t = monaco.languages.CompletionItemKind.Module;
-                            break;
-                        case "Property":
-                            t = monaco.languages.CompletionItemKind.Property;
-                            break;
-                        case "Reference":
-                            t = monaco.languages.CompletionItemKind.Reference;
-                            break;
-                        case "Snippet":
-                            t = monaco.languages.CompletionItemKind.Snippet;
-                            break;
-                        case "Text":
-                            t = monaco.languages.CompletionItemKind.Text;
-                            break;
-                        case "Unit":
-                            t = monaco.languages.CompletionItemKind.Unit;
-                            break;
-                        case "Value":
-                            t = monaco.languages.CompletionItemKind.Value;
-                            break;
-                        case "Variable":
-                            t = monaco.languages.CompletionItemKind.Variable;
-                            break;
-                    }
-                    
-                    Proposals.push({
-                        label: l,
-                        kind: t,
-                        detail: d,
-                        insertText: i
-                    });
+			AddIntellisense = function (l, k, d, i) {
+				console.log(l);
+				console.log(k);
+				console.log(d);
+				console.log(i);
+				var t;
+				switch (k) {
+					case "Class":
+						t = monaco.languages.CompletionItemKind.Class;
+						break;
+					case "Color":
+						t = monaco.languages.CompletionItemKind.Color;
+						break;
+					case "Constructor":
+						t = monaco.languages.CompletionItemKind.Constructor;
+						break;
+					case "Enum":
+						t = monaco.languages.CompletionItemKind.Enum;
+						break;
+					case "Field":
+						t = monaco.languages.CompletionItemKind.Field;
+						break;
+					case "File":
+						t = monaco.languages.CompletionItemKind.File;
+						break;
+					case "Folder":
+						t = monaco.languages.CompletionItemKind.Folder;
+						break;
+					case "Function":
+						t = monaco.languages.CompletionItemKind.Function;
+						break;
+					case "Interface":
+						t = monaco.languages.CompletionItemKind.Interface;
+						break;
+					case "Keyword":
+						t = monaco.languages.CompletionItemKind.Keyword;
+						break;
+					case "Method":
+						t = monaco.languages.CompletionItemKind.Method;
+						break;
+					case "Module":
+						t = monaco.languages.CompletionItemKind.Module;
+						break;
+					case "Property":
+						t = monaco.languages.CompletionItemKind.Property;
+						break;
+					case "Reference":
+						t = monaco.languages.CompletionItemKind.Reference;
+						break;
+					case "Snippet":
+						t = monaco.languages.CompletionItemKind.Snippet;
+						break;
+					case "Text":
+						t = monaco.languages.CompletionItemKind.Text;
+						break;
+					case "Unit":
+						t = monaco.languages.CompletionItemKind.Unit;
+						break;
+					case "Value":
+						t = monaco.languages.CompletionItemKind.Value;
+						break;
+					case "Variable":
+						t = monaco.languages.CompletionItemKind.Variable;
+						break;
+				}
 
-                    console.log(Proposals);
-                }
+				Proposals.push({
+					label: l,
+					kind: t,
+					detail: d,
+					insertText: i
+				});
+
+				console.log(Proposals);
+			}
 		});
 	</script>
 </body>
